@@ -36,7 +36,7 @@ include 'koneksi.php';
   <div class="col-md-2 bg-success mt-5 pr-3 pt-4">
     <ul class="nav flex-column ml-3 mb-2">
       <li class="nav-item">
-    <a class="nav-link text-white"  href="#"><i class="fas fa-user mr-3 display-4"></i>Admin</a>
+    <a class="nav-link text-white"  href="dashboard.html"><i class="fas fa-user mr-3 display-4"></i>Admin</a>
   </li>
     </ul>
   </div>
@@ -49,18 +49,18 @@ include 'koneksi.php';
     <a class="nav-link text-white"  href="index.html"><i class="fas fa-tachometer-alt mr-3"></i>Dashboard</a> <hr class="bg-secondary">
   </li>
   <li class="nav-item">
-    <a class="nav-link text-white" href="about_admin.php"><i class="far fa-question-circle mr-3"></i>
+    <a class="nav-link text-white" href="#"><i class="far fa-question-circle mr-3"></i>
     About</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
-    <a class="nav-link text-white" href="#"><i class="fas fa-bell mr-3"></i>
+    <a class="nav-link text-white" href="dosen.html"><i class="fas fa-bell mr-3"></i>
     New Notification</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
     <a class="nav-link text-white" href="panduan admin.php"><i class="fas fa-calendar-alt mr-3"></i>Panduan</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">   
-    <a class="nav-link text-white" href="#"><i class="fas fa-paper-plane mr-3"></i>Informasi</a><hr class="bg-secondary">
+    <a class="nav-link text-white" href="informasi.html"><i class="fas fa-paper-plane mr-3"></i>Informasi</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
     <a class="nav-link text-white" href="logout.php"><i class="fas fa-sign-out-alt mr-3 mt-5"></i>Logout</a>
@@ -69,79 +69,84 @@ include 'koneksi.php';
   </div>
 
   <div class="col-md-10">
-     <h3>DATA GURU </h3><hr class="bg-secondary">
+     <h3>ABOUT </h3><hr class="bg-secondary">
+     <form action="input_about_telpon.php" method="post" enctype="multipart/form-data">
+    <table cellpadding="2" cellspacing="0" >
+      <tr>
+        <td>No telpon</td>
+        <td>:</td>
+        <td><input type="text" name="no_tlp" size="30" required class="form-control"></td>
+      </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td></td>
+      <td><input type="submit" name="tambah" class="btn btn-dark text-white" value="Tambah"></td>
+    </tr>
+  </table>
+</form>
 
-      <a href="input_dataguru.php" class="btn btn-primary" ><i class="fas fa-plus-square mr-3" ></i>TAMBAH DATA GURU</a>
-  <?php 
-  if(isset($_GET['pesan'])){
-    $pesan = $_GET['pesan'];
-    if($pesan == "input"){
-      echo "Data berhasil di input.";
-    }else if($pesan == "update"){
-      echo "Data berhasil di update.";
-    }else if($pesan == "hapus"){
-      echo "Data berhasil di hapus.";
-    }
-  }
-  ?>
-
-  <br><br>
-  <form class="example" action="data guru.php" method="get">
-    <input type="text" placeholder="Search name" name="cari">
-    <button type="submit" value="Cari"><i class="fa fa-search"></i></button>
-  </form>
-
-  <?php 
-  if(isset($_GET['cari'])){
-    $cari = $_GET['cari'];
-    echo "<b>Hasil pencarian : ".$cari."</b>";
-  }
-  ?>
-  
-  <br><br>
-  <div class="container">
+<div class="container pt-2">
     <table class="table">
       <tr>
-        <th>Id</th>
-        <th>Nama</th>
-        <th>Jenis Kelamin</th>
-        <th>Agama</th>
-        <th>Jabatan</th>
-        <th>Email</th>
-        <th>Keterangan</th>
+        <th>No Telpon</th>
+        <th>Keterangan</th> 
       </tr>
-
 
       <?php 
-    if(isset($_GET['cari'])){
-      $cari = $_GET['cari'];
-      $data = mysql_query( "select * from guru where nama like '%".$cari."%' " );       
-    }else{
-      $data = mysql_query( "select * from guru");   
-    }
-    while($d = mysql_fetch_array($data)){
-      ?>
-      <tr>
-        <td><?php echo $d['id']; ?></td>
-        <td><?php echo $d['nama']; ?></td>
-        <td><?php echo $d['jenis_kelamin']; ?></td>
-        <td><?php echo $d['agama']; ?></td>
-        <td><?php echo $d['jabatan']; ?></td>
-        <td><?php echo $d['email']; ?></td>
-        <td>
-            <a  href="lihat_guru.php?id=<?php echo $d['id']; ?>"><i class="fas fa-search text-warning"></i></a>
-            <a  href="edit_dataguru.php?id=<?php echo $d['id']; ?>">| <i class="fas fa-edit text-primary"></i></a>
-            <a  href="delete_guru.php?id=<?php echo $d['id']; ?>">| <i class="fas fa-trash-alt text-danger"></i></a> 
+      include "koneksi.php";
+      $query_mysql = mysql_query("SELECT * FROM about_tlp")or die(mysql_error());
+      while($data = mysql_fetch_array($query_mysql)){
+        ?>
+        <tr>
+          <td><?php echo $data['no_tlp']; ?></td>
+          <td>
+            <a  href="edit_about_telpon.php?id=<?php echo $data['id']; ?>" class="text-info">Edit</a>  |
+            <a  href="delete_about_telpon.php?id=<?php echo $data['id']; ?>" class="text-danger">Delete</a>
           </td>
+        </tr>
+      <?php } ?>
+  </div>
+
+       <form action="input_about_email.php" method="post" enctype="multipart/form-data">
+    <table cellpadding="2" cellspacing="0" >
+      <tr>
+        <td>Email</td>
+        <td>:</td>
+        <td><input type="text" name="email" size="30" required class="form-control"></td>
       </tr>
-    <?php } ?>
+    <tr>
+      <td>&nbsp;</td>
+      <td></td>
+      <td><input type="submit" name="tambah" class="btn btn-dark text-white" value="Tambah"></td>
+    </tr>
+  </table>
+</form>
 
-    </table>
-    <input type="button" name="batal" class="btn btn-danger mt-2" value="KEMBALI" onclick=self.history.back()>
-  </div>
-  </div>
-    </div>
+<div class="container pt-2">
+    <table class="table">
+      <tr>
+        <th>Email</th>
+        <th>Keterangan</th> 
+      </tr>
 
+      <?php 
+      include "koneksi.php";
+      $query_mysql = mysql_query("SELECT * FROM about_email")or die(mysql_error());
+      while($data = mysql_fetch_array($query_mysql)){
+        ?>
+        <tr>
+          <td><?php echo $data['email']; ?></td>
+          <td>
+            <a  href="edit_about_email.php?id=<?php echo $data['id']; ?>" class="text-info">Edit</a>  |
+            <a  href="delete_about_email.php?id=<?php echo $data['id']; ?>" class="text-danger">Delete</a>
+          </td>
+        </tr>
+      <?php } ?>
+  </div>
+</table>
+<input type="button" name="batal" class="btn btn-danger" value="Kembali" onclick=self.history.back()>
+    
+ 
 <!--     <div class="row mt-5">
       <div class="card ml-4 text-white text-center" style="width: 18rem;">
         <div class="card-header bg-danger display-4 pt-4 pb-4">

@@ -33,7 +33,7 @@
   <div class="col-md-2 bg-success mt-5 pr-3 pt-4">
     <ul class="nav flex-column ml-3 mb-2">
       <li class="nav-item">
-    <a class="nav-link text-white"  href="dashboard.html"><i class="fas fa-user mr-3 display-4"></i>Admin</a>
+    <a class="nav-link text-white"  href="#"><i class="fas fa-user mr-3 display-4"></i>Admin</a>
   </li>
     </ul>
   </div>
@@ -46,18 +46,18 @@
     <a class="nav-link text-white"  href="index.html"><i class="fas fa-tachometer-alt mr-3"></i>Dashboard</a> <hr class="bg-secondary">
   </li>
   <li class="nav-item">
-    <a class="nav-link text-white" href="#"><i class="far fa-question-circle mr-3"></i>
+    <a class="nav-link text-white" href="about_admin.php"><i class="far fa-question-circle mr-3"></i>
     About</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
-    <a class="nav-link text-white" href="dosen.html"><i class="fas fa-bell mr-3"></i>
+    <a class="nav-link text-white" href="#"><i class="fas fa-bell mr-3"></i>
     New Notification</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
     <a class="nav-link text-white" href="panduan admin.php"><i class="fas fa-calendar-alt mr-3"></i>Panduan</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">   
-    <a class="nav-link text-white" href="informasi.html"><i class="fas fa-paper-plane mr-3"></i>Informasi</a><hr class="bg-secondary">
+    <a class="nav-link text-white" href="#"><i class="fas fa-paper-plane mr-3"></i>Informasi</a><hr class="bg-secondary">
   </li>
   <li class="nav-item">
     <a class="nav-link text-white" href="logout.php"><i class="fas fa-sign-out-alt mr-3 mt-5"></i>Logout</a>

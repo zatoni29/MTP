@@ -1,6 +1,3 @@
-<?php 
-include 'koneksi.php';
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,77 +65,39 @@ include 'koneksi.php';
 </ul>
   </div>
 
-  <div class="col-md-10">
-     <h3>DATA GURU </h3><hr class="bg-secondary">
+  <div class="col-md-10  pt-2">
+     <h3><i class="far fa-question-circle mr-3"></i>EDIT TELPON </h3><hr class="bg-secondary">
 
-      <a href="input_dataguru.php" class="btn btn-primary" ><i class="fas fa-plus-square mr-3" ></i>TAMBAH DATA GURU</a>
-  <?php 
-  if(isset($_GET['pesan'])){
-    $pesan = $_GET['pesan'];
-    if($pesan == "input"){
-      echo "Data berhasil di input.";
-    }else if($pesan == "update"){
-      echo "Data berhasil di update.";
-    }else if($pesan == "hapus"){
-      echo "Data berhasil di hapus.";
-    }
-  }
-  ?>
-
-  <br><br>
-  <form class="example" action="data guru.php" method="get">
-    <input type="text" placeholder="Search name" name="cari">
-    <button type="submit" value="Cari"><i class="fa fa-search"></i></button>
-  </form>
-
-  <?php 
-  if(isset($_GET['cari'])){
-    $cari = $_GET['cari'];
-    echo "<b>Hasil pencarian : ".$cari."</b>";
+<?php
+  include('koneksi.php');
+  $id = $_GET['id'];
+  $show = mysql_query("SELECT * FROM about_tlp WHERE id='$id'");
+  
+  if(mysql_num_rows($show) == 0){
+  
+    echo '<script>window.history.back()</script>';
+    
+  }else{
+  
+    $data = mysql_fetch_assoc($show);
+  
   }
   ?>
   
-  <br><br>
-  <div class="container">
-    <table class="table">
+  <form action="update_about_telpon.php" method="post">
+    <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <table cellpadding="3" cellspacing="0">
       <tr>
-        <th>Id</th>
-        <th>Nama</th>
-        <th>Jenis Kelamin</th>
-        <th>Agama</th>
-        <th>Jabatan</th>
-        <th>Email</th>
-        <th>Keterangan</th>
+        <td>No Telpon : </td>
+        <td><input type="text" name="no_tlp" value="<?php echo $data['no_tlp']; ?>" required></td>
       </tr>
-
-
-      <?php 
-    if(isset($_GET['cari'])){
-      $cari = $_GET['cari'];
-      $data = mysql_query( "select * from guru where nama like '%".$cari."%' " );       
-    }else{
-      $data = mysql_query( "select * from guru");   
-    }
-    while($d = mysql_fetch_array($data)){
-      ?>
-      <tr>
-        <td><?php echo $d['id']; ?></td>
-        <td><?php echo $d['nama']; ?></td>
-        <td><?php echo $d['jenis_kelamin']; ?></td>
-        <td><?php echo $d['agama']; ?></td>
-        <td><?php echo $d['jabatan']; ?></td>
-        <td><?php echo $d['email']; ?></td>
-        <td>
-            <a  href="lihat_guru.php?id=<?php echo $d['id']; ?>"><i class="fas fa-search text-warning"></i></a>
-            <a  href="edit_dataguru.php?id=<?php echo $d['id']; ?>">| <i class="fas fa-edit text-primary"></i></a>
-            <a  href="delete_guru.php?id=<?php echo $d['id']; ?>">| <i class="fas fa-trash-alt text-danger"></i></a> 
-          </td>
-      </tr>
-    <?php } ?>
-
-    </table>
-    <input type="button" name="batal" class="btn btn-danger mt-2" value="KEMBALI" onclick=self.history.back()>
-  </div>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="simpan" class="btn btn-primary mt-2" value="EDIT">
+    <input type="button" name="batal" class="btn btn-danger mt-2" value="KEMBALI" onclick=self.history.back()></td>
+  </tr>
+  </table>
+</form>
   </div>
     </div>
 

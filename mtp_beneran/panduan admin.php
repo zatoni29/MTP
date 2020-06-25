@@ -110,6 +110,7 @@ include 'koneksi.php';
           <td><?php echo $data['data']; ?></td>
           <td><?php echo $data['judul']; ?></td>
           <td>
+            <a href="data/<?php echo $data['data']; ?>" class= "text-dark"download><i class="fas fa-file-download"></i></a> |
             <a  href="edit_panduan.php?id=<?php echo $data['id']; ?>" class="text-info">Edit</a>  |
             <a  href="delete_panduan.php?id=<?php echo $data['id']; ?>" class="text-danger">Delete</a>
           </td>
