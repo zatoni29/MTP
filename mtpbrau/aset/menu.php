@@ -10,6 +10,115 @@
       </li>
     </ul>
     <h1>Selamat Datang</h1>
+
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="../pages/mailbox.php" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../aset/image/aku.JPG" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="../pages/mailbox.php" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../aset/image/aku.JPG" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="../pages/mailbox.php" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../aset/image/aku.JPG" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="../pages/inbox.php" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="../pages/inbox.php" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-divider"></div>
+         
+        </div>
+      </li>
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="../aset/image/aku.jpg" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">Rahmat Abdul Muplih</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-transparent">
+            <img src="../aset/image/aku.jpg" class="img-circle elevation-2" alt="User Image">
+
+            <p>
+              Rahmat Abdul Muplih - Web Developer
+              <small>Tenik Informatika</small>
+            </p>
+          </li>
+          <!-- Menu Body -->
+          
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="../pages/profile.php" class="btn btn-primary btn-block">Profile</a>
+            <a href="../pages/login.php" class="btn btn-primary btn-block">Sign out</a>
+          </li>
+        </ul>
+      </li>
+     
+    </ul>
+
+    
+ </div>
+
+
     <li class="navbar-nav ml-auto justify-content-end text-right">
            <div class="image">
               <!-- <img src="../aset/image/download.png" class="img-circle elevation-2" style="width: 12%" alt="User Image"> -->
@@ -35,7 +144,7 @@
           <img src="../aset/image/download.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="../Profile/" class="d-block">Rahmat</a>
+          <a href="../pages/Profile.php" class="d-block">Rahmat</a>
         </div>
       </div>
 
@@ -45,7 +154,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-            <a href="../home/" class="nav-link">
+            <a href="../pages/home.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -53,7 +162,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../dashboard/" class="nav-link">
+            <a href="../pages/dash.php" class="nav-link">
              <i class="nav-icon  fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -71,19 +180,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../Backup_data/" class="nav-link">
+                <a href="../pages/backup_data.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Backup Data</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../laporan/" class="nav-link">
+                <a href="../pages/laporan.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../kelola_data/" class="nav-link">
+                <a href="../pages/kelola_data.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kelol Data User</p>
                 </a>
@@ -91,7 +200,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="../Panduan/" class="nav-link">
+            <a href="../pages/panduan.php" class="nav-link">
               <i class="nav-icon  fa fa-file"></i>
               <p>
                 Panduan
@@ -99,7 +208,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="../pages/informasi.php" class="nav-link">
               <i class="nav-icon fas fa-info"></i>
               <p>
                 Informasi
@@ -107,21 +216,23 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="../pages/tentang.php" class="nav-link">
               <i class="nav-icon far fa-question-circle"></i>
               <p>
                 Tentang
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="../dashboard/login.php" class="nav-link">
-              <i class="nav-icon fas fa-sign-out-alt"></i>
+
+           <li class="nav-item">
+            <a href="../pages/register.php" class="nav-link">
+              <i class="nav-icon fas fa-plus"></i>
               <p>
-                Log out
+                Tambah Akun
               </p>
             </a>
           </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
